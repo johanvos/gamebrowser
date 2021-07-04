@@ -43,6 +43,7 @@ public class CatalogOperation {
     public CatalogOperation() {
         this.storageService = StorageService.create().get();
         root = new File(this.storageService.getPrivateStorage().get(), ".gamebrowser");
+        root.mkdirs();
         Path path = Path.of(root.getAbsolutePath(), "localcatalog.txt");
     if (!path.toFile().exists()) {
         try {
