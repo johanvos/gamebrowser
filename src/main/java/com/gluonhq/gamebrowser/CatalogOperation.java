@@ -123,7 +123,7 @@ public class CatalogOperation {
             InputStream in = url.openStream();
             Files.copy(in, path, StandardCopyOption.REPLACE_EXISTING);
             in.close();
-            String entry = dest+"!1!"+url.toString();
+            String entry = dest+"!1!"+url.toString()+"\n";
             Path lc = Path.of(root.getAbsolutePath(), "localcatalog.txt");
             Files.write(lc, entry.getBytes(), StandardOpenOption.APPEND);
         } catch (Exception e) {
